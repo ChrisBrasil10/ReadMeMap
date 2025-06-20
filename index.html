@@ -14,39 +14,86 @@
       overflow: hidden;
       background: black;
     }
-    .container {
-      height: 100%;
+    svg {
       width: 100%;
-      position: relative;
+      height: 100%;
+      display: block;
     }
-    .container .map {
-      height: inherit;
-      width: inherit;
+    .circle-group {
+      cursor: pointer;
+      transition: transform 0.2s ease;
     }
-    .container .text {
+    .circle {
+      stroke: white;
+      stroke-width: 2;
+      transition: r 0.3s ease;
+    }
+    .label-text {
+      font-family: 'Inter Tight', sans-serif;
+      fill: white;
+      font-size: 12px;  /* default small; grows into circle */
+      opacity: 0;
+      transition: opacity 0.3s ease, font-size 0.3s ease;
+      pointer-events: none;
+    }
+    .circle-group:hover .circle {
+      r: 40;
+    }
+    .circle-group:hover .label-text {
+      opacity: 1;
+      font-size: 14px;  /* scaled font inside big circle */
+    }
+    .text {
+      position: fixed;
       bottom: 1%;
       margin-left: 3%;
-      position: fixed;
       font-family: 'Inter Tight', sans-serif;
     }
-    .container .location {
+    .location {
       color: #FF9F0A;
-      font-size: 9vh; /* Chris' a bit bigger */
+      font-size: 9vh;
       margin-bottom: -2%;
     }
-    .container .label {
+    .label {
       color: #E0DCDA;
-      font-size: 13vh; /* Projects smaller than before */
+      font-size: 13vh;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img class="map" src="map.svg">
-    <div class="text">
-      <div class="location">My Projects</div>
-      <div class="label">Worldwide!</div>
-    </div>
+  <svg viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
+    <image href="map.svg" width="1000" height="500"/>
+
+    <!-- Health Reflect -->
+    <g class="circle-group" onclick="window.open('https://github.com/ChrisBrasil10/ChessBot', '_blank')">
+      <circle class="circle" cx="305" cy="185" r="10" fill="#3EA8ED" />
+      <text class="label-text" x="305" y="185" text-anchor="middle" dy="0.35em">ChessBot</text>
+    </g>
+
+    <!-- ChessBot -->
+    <g class="circle-group" onclick="window.open('https://github.com/ChrisBrasil10/Rapid-Ride', '_blank')">
+      <circle class="circle" cx="800" cy="244" r="10" fill="#FF9F0A" />
+      <text class="label-text" x="800" y="244" text-anchor="middle" dy="0.35em">Rapid Ride</text>
+    </g>    
+
+    <!-- Rapid Ride -->
+    <g class="circle-group" onclick="window.open('https://github.com/ChrisBrasil10/Health-Reflect', '_blank')">
+      <circle class="circle" cx="658" cy="235" r="10" fill="#09CF75" />
+      <text class="label-text" x="658" y="235" text-anchor="middle">
+        <tspan x="658" dy="0em">Health</tspan>
+        <tspan x="658" dy="1em">Reflect</tspan>
+      </text>
+    </g>
+  </svg>
+
+  <div class="text">
+    <div class="location">My Projects</div>
+    <div class="label">Worldwide!</div>
   </div>
 </body>
 </html>
+
+
+
+
+
