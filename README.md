@@ -1,1 +1,1 @@
-<img width="1728" alt="Screenshot 2025-06-19 at 6 32 05 PM" src="https://github.com/user-attachments/assets/e580fcd5-faf1-4ca6-88dc-21753d9565d5" />
+![Image Alt](image_url)https://github.com/ChrisBrasil10/ReadMeMap/blob/b8f778812ec4f7975957e219d8c0d299d8349cab/myMap.png
